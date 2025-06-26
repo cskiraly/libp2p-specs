@@ -89,8 +89,10 @@ provide to Gossipsub to enable partial message delivery.
 2. Given two partial messages, merge them into a more complete partial message.
   2a. If merging results in a complete message, return the complete message.
 3. Encode and decode a partial message.
-4. Given a partial message, encode a request for the rest of the message.
-5. Given the request above and a complete message, return relevant parts of the
+4. Given a partial message, block the stack from sending a full IWANT on
+reception of an IHAVE.
+5. Given a partial message, encode a request for the rest of the message.
+6. Given the request above and a complete message, return relevant parts of the
    message.
 
 
